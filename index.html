@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Emissão de CO2</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="page-header__content">
+      <h1 class="page-header__title">🍃 Calculadora de Emissão de CO2</h1>
+      <p class="page-header__subtitle">Calcule a emissão de CO2 de sua viagem e descubra alternativas mais sustentáveis.</p>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="calculator">
+      <form id="calculator-form" class="calculator__form">
+        <div class="calculator__group">
+          <label for="origin" class="calculator__label">Origem</label>
+          <input id="origin" name="origin" list="cities-list" class="calculator__input" placeholder="Informe a cidade de origem">
+        </div>
+
+        <div class="calculator__group">
+          <label for="destination" class="calculator__label">Destino</label>
+          <input id="destination" name="destination" list="cities-list" class="calculator__input" placeholder="Informe a cidade de destino">
+        </div>
+
+        <datalist id="cities-list"></datalist>
+
+        <div class="calculator__group calculator__group--distance">
+          <label for="distance" class="calculator__label">Distância (km)</label>
+          <input id="distance" name="distance" type="number" readonly class="calculator__input calculator__input--readonly" placeholder="Auto preenchido">
+          <p class="calculator__help-text">A distância será preenchida automaticamente</p>
+        </div>
+
+        <div class="calculator__group calculator__group--checkbox">
+          <input id="manual-distance" name="manual-distance" type="checkbox" class="calculator__checkbox">
+          <label for="manual-distance" class="calculator__checkbox-label">inserir distância manualmente</label>
+        </div>
+
+        <fieldset class="calculator__transport">
+          <legend class="calculator__legend">Modo de transporte</legend>
+          <div class="calculator__transport-grid">
+            <label class="calculator__transport-option">
+              <input type="radio" name="transport" value="bicycle" class="calculator__transport-input">
+              <span class="calculator__transport-icon">🚲</span>
+              <span class="calculator__transport-label">Bicicleta</span>
+            </label>
+
+            <label class="calculator__transport-option">
+              <input type="radio" name="transport" value="car" checked class="calculator__transport-input">
+              <span class="calculator__transport-icon">🚗</span>
+              <span class="calculator__transport-label">Carro</span>
+            </label>
+
+            <label class="calculator__transport-option">
+              <input type="radio" name="transport" value="bus" class="calculator__transport-input">
+              <span class="calculator__transport-icon">🚌</span>
+              <span class="calculator__transport-label">Ônibus</span>
+            </label>
+
+            <label class="calculator__transport-option">
+              <input type="radio" name="transport" value="truck" class="calculator__transport-input">
+              <span class="calculator__transport-icon">🚚</span>
+              <span class="calculator__transport-label">Caminhão</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="calculator__actions">
+          <button type="submit" class="calculator__button">Calcular Emissão</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="results" class="results hidden">
+      <div id="results-content" class="results__content"></div>
+    </section>
+
+    <section id="comparison" class="comparison hidden">
+      <div id="comparison-content" class="comparison__content"></div>
+    </section>
+
+    <section id="carbon-credits" class="carbon-credits hidden">
+      <div id="carbon-credts-content" class="carbon-credits__content"></div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p class="page-footer__text">Desenvolvimento com amor para a DIO | Projeto GitHub Copilot do Johnny</p>
+  </footer>
+
+  <script src="js/routes-data.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
